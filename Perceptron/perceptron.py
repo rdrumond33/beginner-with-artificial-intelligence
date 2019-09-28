@@ -4,7 +4,7 @@ def readData(file):
     data_set = []
 
     with open(file) as csvfile:
-        readCSV = csv.reader(csvfile, delimiter=';')
+        readCSV = csv.reader(csvfile, delimiter=',')
 
         index = 0
 
@@ -50,7 +50,7 @@ def perceptron(dados,w):
                     w[key] +=  (M*e*float(dados[i][key]))
                     key += 1 
         i+=1
-    print(w)
+    print("Size the: [x,y,bias] == {}".format(w))
     
 pesos = [1, 1, 1]
 dados = readData('./dados.csv')
